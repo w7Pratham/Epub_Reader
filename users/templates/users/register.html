@@ -1,0 +1,35 @@
+{% extends "deployer/base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card bg-dark text-white">
+                <div class="card-header">Log In</div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" name="{{ form.username.name }}" required>
+                            <label>Username</label>
+                          </div>
+                          <div class="form-group">
+                            <input type="email text" name="{{ form.email.name }}" required>
+                            <label>Email</label>
+                          </div>
+                          <div class="form-group">
+                            <input type="password" name="{{ form.password1.name }}" required>
+                            <label>Password</label>
+                          </div>
+                          <div class="form-group">
+                            <input type="password" name="{{ form.password2.name }}" required>
+                            <label>Confirm Password</label>
+                          </div>
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
